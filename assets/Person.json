@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "Afsana",
+    "lastName": "Akter",
+    "address": "Chittagong",
+    "education": "Bsc in CSE"
+  },
+  {
+    "firstName": "Ayrin",
+    "lastName": "Akter",
+    "address": "Sylhet",
+    "education": "Bsc in CSE"
+  },
+  {
+    "firstName": "Rony",
+    "lastName": "Hossain",
+    "address": "Cumilla",
+    "education": "Bsc in CSE"
+  },
+  {
+    "firstName": "Salma",
+    "lastName": "Akter",
+    "address": "Chittagong",
+    "education": "Bsc in Engilsh"
+  }
+]
