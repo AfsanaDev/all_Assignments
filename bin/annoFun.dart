@@ -10,8 +10,8 @@ void square(int i){
 
 void main(){
   calculate(1, 5, square);
-  calculate(2, 6, (int i){
-    print(i*i*i);
-  });
+  // calculate(2, 6, (int i){
+  //   print(i*i*i);
+  // });
 
 }
