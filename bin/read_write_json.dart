@@ -1,41 +1,42 @@
-import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
-import '../assets/Person.json';
-import 'package:test/expect.dart';
 
-void main() async{
-  final fileName = 'assets/Person.json';
+void main(){
 
-  var personFile = File(fileName);
+  var person = File('assets/Person.json');
 
-  personFile.readAsString().then((String contents){
-    prints(contents);
+  person.readAsString().then((value) {
+    var data = jsonDecode(value);
+    List<Person> person =[];
+
+    for( var names in data){
+      var persons = Person( names['firstName'], names['lastName'], names['address']);
+      person.add(persons);
+    }
+
+    for( var p in person){
+      // print(p.firstName);
+      // print(p.lastName);
+      // print(p.address);
+      p.show();
+
+
+    }
+
   });
-
-
-  //var file = await File(fileName).writeAsString();
-
 }
 
-class personInfo{
-  final String firstName;
-  final String lastName;
-  final String address;
-  final String education;
+class Person {
+  String? firstName;
+  String? lastName;
+  String? address;
 
-   personInfo({required this.firstName, required this.lastName, required this.address, required this.education});
+  Person(this.firstName, this.lastName, this.address);
 
-  factory personInfo.fromJson(Map<String, dynamic>json){
-    return personInfo(firstName: "afsana",
-        lastName: "akter",
-        address: "ctg",
-        education: "Bsc in cse");
-  }
-
- void show(){
+  void show(){
     print("Full name: $firstName $lastName");
-    print("Education: $education");
     print("Address: $address");
- }
+    print("");
+  }
 
 }
