@@ -6,7 +6,7 @@ void main() {
 
   myBooks.readAsString().then((value) {
     var bookList = jsonDecode(value);
-    //prints(bookList);
+    //print(bookList.runtimeType);
     List<BookList> bookLists = [];
 
     for (var bookNames in bookList) {
@@ -14,7 +14,7 @@ void main() {
           BookList(bookNames['title'], bookNames['author'], bookNames['price']);
       bookLists.add(books);
     }
-    //print(bookList);
+    print(bookList.runtimeType);
 
     List<BookList> price = [];
 
@@ -24,6 +24,7 @@ void main() {
 
       //var tPrice = BookPrices.where();
     }
+    print(price.runtimeType);
 
 
     var totalPrice = 0;
